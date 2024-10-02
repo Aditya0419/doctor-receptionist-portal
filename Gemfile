@@ -7,7 +7,11 @@ gem "devise"
 gem "chartkick"
 gem "groupdate"
 gem 'importmap-rails'
+gem 'chart-js-rails'
+gem 'bootstrap', '~> 5.1.0'
 
+
+# gem 'turbolinks', '~> 5'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

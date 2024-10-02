@@ -3,7 +3,17 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
   before_action :ensure_receptionist, only: %i[new create edit update destroy] # Only receptionists can manage patients
   before_action :ensure_doctor, only: [:doctor_dashboard] # Only doctors can access the doctor dashboard
-  skip_before_action :set_patient, only: [:chart]
+
+
+
+  def chart
+    @patients_chart_data = Patient.group("DATE(created_at)").count.transform_keys { |date| date.to_date.to_time }
+
+    # Log the patient data to check if it exists
+    logger.debug "Patient data: #{@patients_chart_data.inspect}"
+    # This returns a hash where the key is the date and the value is the count of patients for that date.
+    # Example: { "2024-09-30" => 10, "2024-10-01" => 15, "2024-10-02" => 20 }
+  end
 
   # GET /patients or /patients.json
   def index
@@ -92,8 +102,11 @@ class PatientsController < ApplicationController
     redirect_to root_path, alert: 'Access Denied' unless current_user.doctor?
   end
 
-  def chart
-    # Group patients by the day they were created and count them
-    @patients_chart_data = Patient.group_by_day(:created_at).count
-  end
+  
+  
+
+  
+  # app/controllers/patients_controller.rb
+  
+
 end

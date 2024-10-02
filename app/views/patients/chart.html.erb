@@ -1,6 +1,33 @@
 <h1>Patient Registration Chart</h1>
+<div id="patients_chart" style="width: 100%; height: 400px;"></div>
 
+<!-- Link to go back to the Patients page -->
+<%= link_to 'Back to Patients', patients_path, class: 'btn btn-primary' %>
 
-  <%= line_chart @patients_chart_data, xtitle: "Date", ytitle: "Number of Patients", title: "Patients Registered Over Time" %>
-
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    Highcharts.chart('patients_chart', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Patients Registered Over Time'
+      },
+      xAxis: {
+        title: {
+          text: 'Date'
+        },
+        categories: <%= raw(@patients_chart_data.keys.to_json) %>
+      },
+      yAxis: {
+        title: {
+          text: 'Number of Patients'
+        }
+      },
+      series: [{
+        name: 'Patients',
+        data: <%= raw(@patients_chart_data.values.to_json) %>
+      }]
+    });
+  });
+</script>

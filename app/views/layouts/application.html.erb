@@ -16,7 +16,11 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
-    
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chartkick@5.0.1/dist/chartkick.min.js', 'defer': true %>
+<%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chart.js', 'defer': true %>
+<%= javascript_include_tag 'https://code.highcharts.com/highcharts.js' %>
+
+
   </head>
 
   <body>
@@ -25,7 +29,8 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= link_to 'View Patient Chart', chart_path %>
+    <%= link_to 'View Patient Chart', chart_path, data: { turbolinks: false } %>
+
 
     <% if user_signed_in? %>
       <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
