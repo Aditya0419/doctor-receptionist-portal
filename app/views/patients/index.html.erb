@@ -1,28 +1,28 @@
-<h1>Registered Patients</h1>
+<div class="container mt-4">
+  <h1>Registered Patients</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @patients.each do |patient| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= patient.name %></td>
-        <td><%= patient.age %></td>
-
-        <td>
-          <%= link_to 'Show', patient_path(patient) %>
-          <%= link_to 'Edit', edit_patient_path(patient) %>
-          <%= link_to 'Destroy', patient_path(patient), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.name %></td>
+          <td><%= patient.age %></td>
+          <td>
+            <%= link_to 'Show', patient_path(patient), class: 'btn btn-primary' %>
+            <%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-warning' %>
+            <%= link_to 'Destroy', patient_path(patient), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Patient', new_patient_path %>
+  <%= link_to 'New Patient', new_patient_path, class: 'btn btn-success' %>
+</div>

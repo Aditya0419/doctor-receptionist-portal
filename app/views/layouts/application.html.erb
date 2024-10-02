@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= content_for(:title) || "Receptionist Doctor Portal" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,37 +13,55 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <%= javascript_include_tag 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %>
     <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chartkick@5.0.1/dist/chartkick.min.js', 'defer': true %>
-<%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chart.js', 'defer': true %>
-<%= javascript_include_tag 'https://code.highcharts.com/highcharts.js' %>
-
-
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chart.js', 'defer': true %>
+    <%= javascript_include_tag 'https://code.highcharts.com/highcharts.js' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container mt-4">
+      <%= yield %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <%= notice %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
 
-    <%= link_to 'View Patient Chart', chart_path, data: { turbolinks: false } %>
+      <% if alert %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= alert %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
 
+      <div class="mb-3 mt-3 ml-3">
+        <%= link_to 'View Patient Chart', chart_path, class: 'btn btn-primary', data: { turbolinks: false } %>
+      </div>
 
-    <% if user_signed_in? %>
-      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <% if user_signed_in? %>
+        <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger mb-2' %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path, class: 'btn btn-success mb-2' %>
+      <% end %>
+    </div>
 
-    <% else %>
-      <%= link_to 'Login', new_user_session_path %>
-    <% end %>
-
-
-   
-   
-
-
-  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
