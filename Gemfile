@@ -8,7 +8,7 @@ gem "chartkick"
 gem "groupdate"
 gem 'importmap-rails'
 gem 'chart-js-rails'
-gem 'bootstrap', '~> 5.1.0'
+gem 'bootstrap', '~> 5.3.3'
 
 
 # gem 'turbolinks', '~> 5'
