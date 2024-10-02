@@ -1,0 +1,26 @@
+<h1>Doctor Dashboard</h1>
+
+<h2>Registered Patients</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Contact Info</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.name %></td>
+        <td><%= patient.age %></td>
+        <td><%= patient.contact_info %></td>
+        <td><%= patient.created_at.strftime("%B %d, %Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Patient Registration Chart</h2>
+<%= line_chart @patients_by_day %>

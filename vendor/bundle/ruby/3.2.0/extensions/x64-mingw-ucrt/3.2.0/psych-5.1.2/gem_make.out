@@ -1,0 +1,31 @@
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
+C:/Ruby32-x64/bin/ruby.exe extconf.rb
+checking for yaml.h... yes
+checking for yaml_get_version() in -lyaml... yes
+creating Makefile
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-c0as4l sitelibdir\=./.gem.20240930-45312-c0as4l clean
+cd libyaml && make clean
+/bin/sh: line 1: cd: libyaml: No such file or directory
+make: [Makefile:287: clean-so] Error 1 (ignored)
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-c0as4l sitelibdir\=./.gem.20240930-45312-c0as4l
+generating psych-x64-mingw-ucrt.def
+compiling psych.c
+compiling psych_emitter.c
+compiling psych_parser.c
+compiling psych_to_ruby.c
+compiling psych_yaml_tree.c
+linking shared-object psych.so
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-c0as4l sitelibdir\=./.gem.20240930-45312-c0as4l install
+/usr/bin/install -c -m 0755 psych.so ./.gem.20240930-45312-c0as4l
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/psych-5.1.2/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-c0as4l sitelibdir\=./.gem.20240930-45312-c0as4l clean
+cd libyaml && make clean
+/bin/sh: line 1: cd: libyaml: No such file or directory
+make: [Makefile:287: clean-so] Error 1 (ignored)

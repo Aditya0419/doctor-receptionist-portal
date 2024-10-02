@@ -13,10 +13,32 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+    
   </head>
 
   <body>
     <%= yield %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= link_to 'View Patient Chart', chart_path %>
+
+    <% if user_signed_in? %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+    <% else %>
+      <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+
+
+   
+   
+
+
+  <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
   </body>
 </html>

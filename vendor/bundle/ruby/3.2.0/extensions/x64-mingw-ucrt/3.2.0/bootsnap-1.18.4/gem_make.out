@@ -1,0 +1,22 @@
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
+C:/Ruby32-x64/bin/ruby.exe extconf.rb
+checking for fdatasync() in unistd.h... no
+checking for whether -O3 is accepted as CFLAGS... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-g8r7eb sitelibdir\=./.gem.20240930-45312-g8r7eb clean
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-g8r7eb sitelibdir\=./.gem.20240930-45312-g8r7eb
+generating bootsnap-x64-mingw-ucrt.def
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-g8r7eb sitelibdir\=./.gem.20240930-45312-g8r7eb install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20240930-45312-g8r7eb/bootsnap
+
+current directory: C:/Users/adity/Desktop/all coding/ruby on rails , internship project/receptionist_doctor_portal/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240930-45312-g8r7eb sitelibdir\=./.gem.20240930-45312-g8r7eb clean
